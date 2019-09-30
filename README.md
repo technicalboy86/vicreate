@@ -1,87 +1,65 @@
-# Ionic 4 App with Login and Registration
+# SB Admin rewritten in Angular8 and Bootstrap 4
 
-This example shows how to create an Ionic application that uses uses OpenID Connect (OIDC) for login. 
+Simple Dashboard Admin App built using Angular 8 and Bootstrap 4
 
-Please read [Tutorial: User Login and Registration in Ionic 4](https://developer.okta.com/blog/2019/06/20/ionic-4-tutorial-user-authentication-and-registration) to see how this application was created.
+This project is a port of the famous Free Admin Bootstrap Theme [SB Admin v8.0](http://startbootstrap.com/template-overviews/sb-admin-2/) to Angular8 Theme.
 
-**Prerequisites:** [Node.js](https://nodejs.org/).
+Powered by [StartAngular](http://startangular.com/) & [StrapUI](http://strapui.com/)
 
-> [Okta](https://developer.okta.com/) has Authentication and User Management APIs that reduce development time with instant-on, scalable user infrastructure. Okta's intuitive API and expert support make it easy for developers to authenticate, manage, and secure users and roles in any application.
+## [Demo](http://rawgit.com/start-angular/SB-Admin-BS4-Angular-6/master/dist/)
 
-* [Getting Started](#getting-started)
-* [Links](#links)
-* [Help](#help)
-* [License](#license)
+## [SB Admin Material version](https://github.com/start-javascript/sb-admin-material)
 
-## Getting Started
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
 
-To install this example application, run the following commands:
+### Introduction
+
+Provides fast, reliable and extensible starter for the development of Angular projects.
+
+`sb-admin-bs4-angular8` provides the following features:
+
+*   Developed using boostrap-v4.0.0
+*   angular-v8.0.0
+*   angular/cli-v8.0.0
+*   [ng-bootstrap-v4.0.0](https://github.com/ng-bootstrap/)
+*   [ngx-translate-v11.0.0](https://github.com/ngx-translate)
+*   Following the best practices.
+*   Ahead-of-Time compilation support.
+*   Official Angular i18n support.
+*   Production and development builds.
+*   Tree-Shaking production builds.
+
+### How to start
+
+**Note** that this seed project requires **node >=v8.9.0 and npm >=4**.
+
+In order to start the project use:
 
 ```bash
-git clone https://github.com/oktadeveloper/okta-ionic-4-login-example.git ionic-login
-cd ionic-login
+$ git clone https://github.com/start-angular/SB-Admin-BS4-Angular-8.git
+$ cd SB-Admin-BS4-Angular-8
+# install the project's dependencies
+$ npm install
+# watches your files and uses livereload by default run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+$ npm start
+# prod build, will output the production application in `dist`
+# the produced code can be deployed (rsynced) to a remote server
+$ npm run build
 ```
 
-This will get a copy of the project installed locally. Then run the following command to install Ionic CLI.
+### Code scaffolding
 
-```
-npm install -g ionic@4.12.0
-```
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
 
-Then install the application's dependencies:
+### Running unit tests
 
-```
-npm install
-```
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-To integrate Okta's Identity Platform for user authentication, you'll first need to:
+### Running end-to-end tests
 
-* [Register](https://www.okta.com/developer/signup/) and create an OIDC application
-* Log in to your Okta account and navigate to **Applications > Add Application** 
-* Select **Native** and click **Next**
-* Give your application a name (e.g. "Ionic 4 App")
-* Add a `http://localhost:8100/implicit/callback` as a Login redirect URI and click **Done**.
-* Click **Edit** and add Logout redirect URIs, where the first should be your reversed Okta domain name, followed by `:/logout` and the second is `http://localhost:8100/implicit/logout`. Click **Save**.
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
 
-After performing these steps, copy your `issuer` and `clientId` into [`src/app/auth/auth.service.ts`](https://github.com/oktadeveloper/okta-ionic-4-login-example/blob/master/src/app/auth/auth.service.ts#L39).
+### Further help
 
-```typescript
-const clientId = '{yourClientId}';
-const issuer = 'https://{yourOktaDomain}/oauth2/default';
-const scopes = 'openid profile offline_access';
-
-if (this.platform.is('cordova')) {
-  this.authConfig = {
-    identity_client: clientId,
-    identity_server: issuer,
-    redirect_url: '{yourReversedOktaDomain}:/callback',
-    scopes: scopes,
-    usePkce: true,
-    end_session_redirect_url: '{yourReversedOktaDomain}:/logout',
-  };
-}
-```
-
-Now you should be able to run the app and login.
-
-```
-ionic serve
-```
-
-## Links
-
-This example uses the following libraries provided by Okta:
-
-* [OktaDev Schematics](https://github.com/oktadeveloper/schematics#readme)
-
-It also uses the following library provided by [Matthew Wieland](https://github.com/wi3land):
-
-* [Ionic AppAuth](https://github.com/wi3land/ionic-appauth#readme)
-
-## Help
-
-Please post any questions on the [associated blog post](https://developer.okta.com/blog/2019/06/20/ionic-4-tutorial-user-authentication-and-registration) or on the [Okta Developer Forums](https://devforum.okta.com/). 
-
-## License
-
-Apache 2.0, see [LICENSE](LICENSE).
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

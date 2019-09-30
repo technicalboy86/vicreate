@@ -361,7 +361,9 @@ var TextureSelector = function (blueprint3d, sideMenu) {
       var textureStretch = ($(this).attr("texture-stretch") == "true");
       var textureScale = parseInt($(this).attr("texture-scale"));
       currentTarget.setTexture(textureUrl, textureStretch, textureScale);
-
+      $("#viewer").show();
+      $("#floorTexturesDiv").hide();
+      $("#wallTextures").hide();
       e.preventDefault();
     });
   }
@@ -379,18 +381,24 @@ var TextureSelector = function (blueprint3d, sideMenu) {
     currentTarget = halfEdge;
     $("#floorTexturesDiv").hide();
     $("#wallTextures").show();
+    $("#viewer").hide();
+
   }
 
   function floorClicked(room) {
     currentTarget = room;
     $("#wallTextures").hide();
     $("#floorTexturesDiv").show();
+    $("#viewer").hide();
   }
 
   function reset() {
     $("#wallTextures").hide();
     $("#floorTexturesDiv").hide();
   }
+
+
+
 
   init();
 }
@@ -513,7 +521,7 @@ $(document).ready(function() {
     floorplannerElement: 'floorplanner-canvas',
     threeElement: '#viewer',
     threeCanvasElement: 'three-canvas',
-    textureDir: "assets/blueprint3d/models/textures/",
+    textureDir: "assets/blueprint3d/rooms/textures/",
     widget: false
   }
   var blueprint3d = new BP3D.Blueprint3d(opts);
@@ -525,6 +533,11 @@ $(document).ready(function() {
   var textureSelector = new TextureSelector(blueprint3d, sideMenu);
   var cameraButtons = new CameraButtons(blueprint3d);
   mainControls(blueprint3d);
+
+  // $("#inner_tab").click(function(e) {
+  //   $("#wallTextures").show();
+  //   $("#floorTexturesDiv").show();
+  // });
 
   // This serialization format needs work
   // Load a simple rectangle room

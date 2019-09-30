@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('new App', () => {
+describe('test-ng8 App', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('new App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getPageTitle()).toContain('Tab One');
+    expect(page.getParagraphText()).toEqual('SB Admin BS4 Angular8');
   });
 });
