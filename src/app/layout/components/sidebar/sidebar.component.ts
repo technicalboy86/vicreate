@@ -78,5 +78,6 @@ export class SidebarComponent implements OnInit {
 
     onInnerBtn(){
       this.toastr.error("Plase select a wall or floor.", 'Oops!');
+      this.toggleSidebar();
     }
 }
