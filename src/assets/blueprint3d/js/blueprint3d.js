@@ -978,7 +978,7 @@ var BP3D;
                 var wallStartpoints = {};
                 for (var i = this.wallStarts.length - 1; i >= 0; i--) {
                     if (this.wallStarts[i].getEnd() === this) {
-                        // remove zero length wall
+                        // remove zero length wall 
                         this.wallStarts[i].remove();
                     }
                     else if (this.wallStarts[i].getEnd().id in wallEndpoints) {
@@ -991,7 +991,7 @@ var BP3D;
                 }
                 for (var i = this.wallEnds.length - 1; i >= 0; i--) {
                     if (this.wallEnds[i].getStart() === this) {
-                        // removed zero length wall
+                        // removed zero length wall 
                         this.wallEnds[i].remove();
                     }
                     else if (this.wallEnds[i].getStart().id in wallStartpoints) {
@@ -1266,7 +1266,7 @@ var BP3D;
     (function (Model) {
         /** The default wall texture. */
         var defaultWallTexture = {
-            url: "assets/blueprint3d/rooms/textures/wallmap.png",
+            url: "rooms/textures/wallmap.png",
             stretch: true,
             scale: 0
         };
@@ -1431,7 +1431,7 @@ var BP3D;
     (function (Model) {
         /** Default texture to be used if nothing is provided. */
         var defaultRoomTexture = {
-            url: "assets/blueprint3d/rooms/textures/hardwood.png",
+            url: "rooms/textures/hardwood.png",
             scale: 400
         };
         /**
@@ -1949,7 +1949,7 @@ var BP3D;
                                 !(nextCorner === firstCorner && currentCorner !== secondCorner)) {
                                 continue;
                             }
-                            // nope, throw it on the queue
+                            // nope, throw it on the queue  
                             addToStack.push(nextCorner);
                         }
                         var previousCorners = next.previousCorners.slice(0);
@@ -2504,7 +2504,7 @@ var BP3D;
                     scope.itemLoadedCallbacks.fire(item);
                 };
                 this.itemLoadingCallbacks.fire();
-                this.loader.load(fileName, loaderCallback, undefined // TODO_Ekki
+                this.loader.load(fileName, loaderCallback, undefined // TODO_Ekki 
                 );
             };
             return Scene;
@@ -2613,7 +2613,7 @@ var BP3D;
             DELETE: 2
         };
         // grid parameters
-        var gridSpacing = 20; // pixels
+        var gridSpacing = 130; // pixels
         var gridWidth = 1;
         var gridColor = "#f1f1f1";
         // room config
@@ -2622,7 +2622,7 @@ var BP3D;
         var wallWidth = 5;
         var wallWidthHover = 7;
         var wallColor = "#dddddd";
-        var wallColorHover = "#008cba";
+        var wallColorHover = "#ff0000";
         var edgeColor = "#888888";
         var edgeColorHover = "#008cba";
         var edgeWidth = 1;
@@ -2631,7 +2631,7 @@ var BP3D;
         var cornerRadius = 0;
         var cornerRadiusHover = 7;
         var cornerColor = "#cccccc";
-        var cornerColorHover = "#008cba";
+        var cornerColorHover = "#ff0000";
         /**
          * The View to be used by a Floorplanner to render in/interact with.
          */
@@ -3585,7 +3585,7 @@ var BP3D;
             var planes = [];
             var basePlanes = []; // always visible
             var texture = null;
-            var lightMap = THREE.ImageUtils.loadTexture("assets/blueprint3d/rooms/textures/walllightmap.png");
+            var lightMap = THREE.ImageUtils.loadTexture("rooms/textures/walllightmap.png");
             var fillerColor = 0xdddddd;
             var sideColor = 0xcccccc;
             var baseColor = 0xdddddd;
@@ -4584,7 +4584,7 @@ var BP3D;
             function init() {
                 THREE.ImageUtils.crossOrigin = "";
                 domElement = scope.element.get(0); // Container
-                camera = new THREE.PerspectiveCamera(70, 1, 1, 10000);
+                camera = new THREE.PerspectiveCamera(45, 1, 1, 10000);
                 renderer = new THREE.WebGLRenderer({
                     antialias: true,
                     preserveDrawingBuffer: true // required to support .toDataURL()

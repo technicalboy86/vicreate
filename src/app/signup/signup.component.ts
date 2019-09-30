@@ -21,6 +21,16 @@ export class SignupComponent implements OnInit {
     ngOnInit() {}
 
     register(form: NgForm) {
+      if(form.value.password != form.value.repassword){
+          this.toastr.error("Password doesn't match!", 'Oops!');
+          return;
+      }
+
+      if(form.value.password.length < 7){
+          this.toastr.error("Password should be 7 ~ 20 length at least", 'Oops!');
+          return;
+      }
+
       this.authService.register(form.value.username, form.value.email, form.value.password).subscribe(
         data => {
           console.log(data);
