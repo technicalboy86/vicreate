@@ -42,6 +42,14 @@ export class AuthService {
     }));
   }
 
+  forgot(email: String) {
+    return this.http.post(this.env.API_URL + 'loginViaDraglet',
+      {email: email}
+    ).pipe(map(res => {
+        return res;
+    }));
+  }
+
   logout() {
     const headers = new HttpHeaders({
       'Authorization': this.token["token_type"]+" "+this.token["access_token"]

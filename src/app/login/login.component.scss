@@ -1,4 +1,4 @@
-$topnav-background-color: #222;
+$topnav-background-color: #000;
 :host {
     display: block;
 }
@@ -25,9 +25,8 @@ $topnav-background-color: #222;
     }
     .input-underline {
         background: 0 0;
-        border: none;
+        border: 1px solid #999;
         box-shadow: none;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
         color: #fff;
         border-radius: 0;
     }
@@ -66,6 +65,7 @@ $topnav-background-color: #222;
 
     .form-group {
         padding: 8px 0;
+        position: relative;
         input::-webkit-input-placeholder {
             color: rgba(255, 255, 255, 0.6) !important;
         }
@@ -83,13 +83,30 @@ $topnav-background-color: #222;
         input:-ms-input-placeholder {
             color: rgba(255, 255, 255, 0.6) !important;
         }
+        input{
+          padding-left: 30px;
+          background: #333;
+        }
+        i {
+            position: absolute;
+            left:7px;
+            top:23px;
+        }
     }
     .form-content {
-        padding: 40px 0;
+        padding: 0px 0;
     }
     .user-avatar {
         -webkit-border-radius: 50%;
         border-radius: 50%;
         border: 2px solid #fff;
+    }
+    .btn-outline{
+      background: none;
+      border:0px;
+      color:white;
+    }
+    .btn-full{
+      width:80%;
     }
 }
