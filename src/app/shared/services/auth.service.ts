@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   register(username: String, email: String, password: String) {
-    return this.http.post(this.env.API_URL + 'registerViaDraglet',
+    return this.http.post(this.env.API_URL + 'forgot',
       {username: username, email: email, password: password}
     ).pipe(map(res => {
         return res;
@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   forgot(email: String) {
-    return this.http.post(this.env.API_URL + 'loginViaDraglet',
+    return this.http.post(this.env.API_URL + 'forgotpassword',
       {email: email}
     ).pipe(map(res => {
         return res;
